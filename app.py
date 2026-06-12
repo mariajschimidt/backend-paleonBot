@@ -1,3 +1,9 @@
+# ===================================================================
+# INICIALIZAÇÃO CRÍTICA DO GEVENT (Deve ser a primeira linha do app)
+# ===================================================================
+from gevent import monkey
+monkey.patch_all()
+
 from flask import Flask, request, session, jsonify
 from flask_socketio import SocketIO, emit
 from google import genai
